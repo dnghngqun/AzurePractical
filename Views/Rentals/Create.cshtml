@@ -1,0 +1,24 @@
+@model ComicSystem.Models.Rental
+
+<h1>Create Rental</h1>
+<form method="post">
+    <div class="form-group">
+        <label for="CustomerID">Customer</label>
+        <select class="form-control" id="CustomerID" name="CustomerID">
+            @foreach (var customer in ViewBag.Customers as SelectList)
+            {
+                <option value="@customer.Value">@customer.Text</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="RentalDate">Rental Date</label>
+        <input type="date" class="form-control" id="RentalDate" name="RentalDate" required />
+    </div>
+    <div class="form-group">
+        <label for="ReturnDate">Return Date</label>
+        <input type="date" class="form-control" id="ReturnDate" name="ReturnDate" required />
+    </div>
+    <!-- Add comic book details dynamically with JavaScript -->
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>

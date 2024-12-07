@@ -1,0 +1,32 @@
+@model IEnumerable<ComicSystem.Models.RentalDetail>
+
+<h2>Danh sách chi tiết thuê</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Rental ID</th>
+        <th>Comic Book</th>
+        <th>Quantity</th>
+        <th>Price Per Day</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.RentalID</td>
+            <td>@item.ComicBook.BookName</td>
+            <td>@item.Quantity</td>
+            <td>@item.PricePerDay.ToString("C")</td>
+            <td>
+                <a href="@Url.Action("Edit", new { id = item.RentalDetailID })">Edit</a> |
+                <a href="@Url.Action("Delete", new { id = item.RentalDetailID })">Delete</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<a class="btn btn-primary" href="@Url.Action("Create")">Create New</a>

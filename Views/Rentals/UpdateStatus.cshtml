@@ -1,0 +1,13 @@
+@model ComicSystem.Models.Rental
+
+<h2>Update Status</h2>
+
+<form asp-action="UpdateStatus">
+    <input type="hidden" asp-for="RentalID" />
+    <div class="form-group">
+        <label asp-for="Status">Status</label>
+        <select asp-for="Status" asp-items="ViewBag.StatusOptions" class="form-control"></select>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancel</a>
+</form>

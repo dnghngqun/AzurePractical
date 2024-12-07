@@ -1,0 +1,46 @@
+# Build artifacts
+bin/
+obj/
+
+# User-specific files
+*.user
+*.userosscache
+*.sln.docstates
+
+# Visual Studio
+.vs/
+.vscode/
+
+# Rider
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE specific files
+*.swp
+*.bak
+*.tmp
+*.tmp/*
+*.suo
+
+# ASP.NET Core Secret Manager
+*.secrets.json
+
+# Configuration files
+appsettings.json
+appsettings.Development.json
+
+# Packages
+*.nupkg
+*.snupkg
+*.Symbols.nupkg
+*.Symbols.snupkg

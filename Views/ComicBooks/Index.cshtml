@@ -1,0 +1,38 @@
+﻿@model IEnumerable<ComicSystem.Models.ComicBook>
+
+<h1>Comic Books</h1>
+<a class="btn btn-primary mb-3" href="/ComicBooks/Create">Add Comic Book</a>
+
+@if (Model != null && Model.Any())
+{
+<table class="table">
+    <thead>
+    <tr>
+        <th>BookName</th>
+        <th>Author</th>
+        <th>Price</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.BookName</td>
+            <td>@item.Author</td>
+            <td>@item.Price</td>
+            <td>
+                <a class="btn btn-sm btn-warning" href="/ComicBooks/Edit/@item.ComicBookID">Edit</a>
+                <a class="btn btn-sm btn-danger" href="/ComicBooks/Delete/@item.ComicBookID">Delete</a>
+
+
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+}
+else
+{
+<p>No comics available at the moment.</p> <!-- Thông báo khi không có dữ liệu -->
+}

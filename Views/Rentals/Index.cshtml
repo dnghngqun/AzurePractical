@@ -1,0 +1,30 @@
+@model IEnumerable<ComicSystem.Models.Rental>
+
+<h1>Rentals</h1>
+<a class="btn btn-primary mb-3" href="/Rentals/Create">Create New Rental</a>
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>Customer Name</th>
+        <th>Rental Date</th>
+        <th>Return Date</th>
+        <th>Status</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var rental in Model)
+    {
+    <tr>
+        <td>@rental.Customer.Fullname</td>
+        <td>@rental.RentalDate.ToString("yyyy-MM-dd")</td>
+        <td>@rental.ReturnDate.ToString("yyyy-MM-dd")</td>
+        <td>@rental.Status</td>
+        <td>
+            <a class="btn btn-warning btn-sm" href="@Url.Action("UpdateStatus", new { id = rental.RentalID })">Update Status</a>
+        </td>
+    </tr>
+    }
+    </tbody>
+</table>

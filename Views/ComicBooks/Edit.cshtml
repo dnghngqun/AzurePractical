@@ -1,0 +1,19 @@
+@model ComicSystem.Models.ComicBook
+
+<h1>Edit Comic Book</h1>
+<form method="post">
+    <input type="hidden" name="ComicBookID" value="@Model.ComicBookID" />
+    <div class="form-group">
+        <label for="BookName">Book Name</label>
+        <input type="text" class="form-control" id="BookName" name="BookName" value="@Model.BookName" required />
+    </div>
+    <div class="form-group">
+        <label for="Author">Author</label>
+        <input type="text" class="form-control" id="Author" name="Author" value="@Model.Author" required />
+    </div>
+    <div class="form-group">
+        <label for="Price">Price</label>
+        <input type="number" class="form-control" id="Price" name="Price" step="0.01" value="@Model.Price" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>

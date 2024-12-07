@@ -1,0 +1,19 @@
+@model ComicSystem.Models.ComicBook
+
+<h1>Delete Comic Book</h1>
+<p>Are you sure you want to delete this comic book?</p>
+<dl>
+    <dt>Book Name</dt>
+    <dd>@Model.BookName</dd>
+
+    <dt>Author</dt>
+    <dd>@Model.Author</dd>
+
+    <dt>Price</dt>
+    <dd>@Model.Price</dd>
+</dl>
+
+<form method="post">
+    <button type="submit" class="btn btn-danger">Delete</button>
+    <a href="/ComicBooks" class="btn btn-secondary">Cancel</a>
+</form>

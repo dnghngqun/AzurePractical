@@ -1,0 +1,18 @@
+@model ComicSystem.Models.ComicBook
+
+<h1>Add Comic Book</h1>
+<form method="post">
+    <div class="form-group">
+        <label for="BookName">Book Name</label>
+        <input type="text" class="form-control" id="BookName" name="BookName" asp-for="BookName" required />
+    </div>
+    <div class="form-group">
+        <label for="Author">Author</label>
+        <input type="text" class="form-control" id="Author" name="Author" asp-for="Author" required />
+    </div>
+    <div class="form-group">
+        <label for="Price">Price</label>
+        <input type="number" class="form-control" id="Price" name="Price" asp-for="Price" step="0.01" required />
+    </div>
+    <button type="submit" class="btn mt-2 btn-primary">Save</button>
+</form>

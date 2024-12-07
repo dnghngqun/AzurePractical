@@ -1,0 +1,43 @@
+@model IEnumerable<ComicSystem.Models.Rental>
+
+<h1>Rental Report</h1>
+<form method="get">
+    <div class="form-group">
+        <label for="startDate">Start Date</label>
+        <input type="date" class="form-control" id="startDate" name="startDate" />
+    </div>
+    <div class="form-group">
+        <label for="endDate">End Date</label>
+        <input type="date" class="form-control" id="endDate" name="endDate" />
+    </div>
+    <button type="submit" class="btn btn-primary">Filter</button>
+</form>
+
+<table class="table table-bordered mt-3">
+    <thead>
+    <tr>
+        <th>Customer</th>
+        <th>Rental Date</th>
+        <th>Return Date</th>
+        <th>Details</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var rental in Model)
+    {
+        <tr>
+            <td>@rental.Customer.Fullname</td>
+            <td>@rental.RentalDate.ToString("yyyy-MM-dd")</td>
+            <td>@rental.ReturnDate.ToString("yyyy-MM-dd")</td>
+            <td>
+                <ul>
+                    @foreach (var detail in rental.RentalDetails)
+                    {
+                        <li>@detail.ComicBook.BookName - Quantity: @detail.Quantity</li>
+                    }
+                </ul>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
